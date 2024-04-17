@@ -1,5 +1,6 @@
 import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
+import Comment from "./Comment";
 
 // [Dynamic Route] : Dynamic Route 자리를 props로 받을수 있다 { params: { id: '6618ee4bf17a2fc1add341f9' }, searchParams: {} }
 export default async function Detail(props) {
@@ -14,6 +15,7 @@ export default async function Detail(props) {
                         <h4>상세페이지</h4>
                         <h4>{result.title}</h4>
                         <p>{result.content}</p>
+                        <Comment _id = {result._id.toString()} />
                     </div>
         </div>
     )
